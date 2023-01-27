@@ -45,14 +45,15 @@ jobs:
 
       - name: Run built Backend for testing
         run: python dist/run.py
-        
-  upload-sth:
-    name: Upload artifact
-    runs-on: Ubuntu
-    
-    steps:
+
       - name: Upload File
         uses: actions/upload-artifact@v2
         with:
          name: my-artifact
          path: dist
+        
+  upload-sth:
+    name: Upload artifact
+    runs-on: Ubuntu
+    
+
