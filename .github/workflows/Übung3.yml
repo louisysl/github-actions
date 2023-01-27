@@ -24,6 +24,12 @@ jobs:
 
       - name: Run built frontend for testing
         run: node dist/app.js
+      
+      - name: Upload File
+        uses: actions/upload-artifact@v2
+        with:
+         name: my-artifact
+         path: dist
 
 
   backend: 
@@ -51,6 +57,20 @@ jobs:
         with:
          name: my-artifact
          path: dist
-
+  
+  bundle:
+    name: Bundle Downloads
+    needs: backend
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Create dist dir
+        run: mkdir -p dist
+      
+      - name: Download
+        uses: actions/download-artifact@v2
+        with:
+          name: dist Downlaod backend
+          path: dist/backend
     
 
