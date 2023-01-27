@@ -51,9 +51,6 @@ jobs:
         with:
          name: my-artifact
          path: dist
-        
-  upload-sth:
-    name: Upload artifact
-    runs-on: Ubuntu
+
     
 
