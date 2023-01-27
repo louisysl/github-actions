@@ -70,7 +70,7 @@ jobs:
       - name: Download
         uses: actions/download-artifact@v2
         with:
-          name: dist Downlaod backend
+          name: dist
           path: dist/backend
     
 
